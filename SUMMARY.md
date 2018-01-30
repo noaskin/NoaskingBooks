@@ -10,3 +10,7 @@
 
 * [基于IntelliJ IDEA 15 和 OpenCV 3.1.0](opencv/ji-yu-intellij-idea-15-he-opencv-3-1-0.md)
 
+## 设计模式
+
+* [设计模型简单概括](she-ji-mo-shi/she-ji-mo-xing-jian-dan-gai-kuo.md)
+
