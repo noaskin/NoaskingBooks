@@ -15,7 +15,7 @@
 
 * [设计模型简单概括](she-ji-mo-shi/she-ji-mo-xing-jian-dan-gai-kuo.md)
 
-## 问题
+## 问题及解决方法
 
 * [AngularX](wen-ti/angularx.md)
 * [Linux](wen-ti/linux.md)
