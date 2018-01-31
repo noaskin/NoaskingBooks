@@ -17,4 +17,5 @@
 ## 问题
 
 * [AngularX](wen-ti/angularx.md)
+* [Linux](wen-ti/linux.md)
 
