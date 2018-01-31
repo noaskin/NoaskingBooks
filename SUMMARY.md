@@ -5,6 +5,7 @@
 ## Server
 
 * [CentOS7安装配置vsftp搭建FTP](server/centos7an-zhuang-pei-zhi-vsftp-da-jian-ftp.md)
+* [使用docker-maven-plugin插件将项目编译为docker镜像到远程linux服务器](server/shi-yong-docker-maven-plugin-cha-jian-jiang-xiang-mu-bian-yi-wei-docker-jing-xiang-dao-yuan-cheng-linux-fu-wu-qi.md)
 
 ## opencv
 
