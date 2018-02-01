@@ -18,5 +18,6 @@
 ## 问题及解决方法
 
 * [AngularX](wen-ti/angularx.md)
+* [MySQL](wen-ti/mysql.md)
 * [Linux](wen-ti/linux.md)
 
