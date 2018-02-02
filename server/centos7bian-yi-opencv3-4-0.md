@@ -8,6 +8,18 @@ yum -y install epel-release
 
 ## 二、安装依赖包和基础包 {#二安装依赖包和基础包}
 
+```
+yum install gcc gcc-c++  
+yum install cmake  
+yum install python-devel numpy  
+yum install gtk2-devel  
+yum install libdc1394-devel  
+yum install libv4l-devel  
+yum install gstreamer-plugins-base-devel 
+```
+
+## 三、安装ffmpeg-devel {#三安装ffmpeg-devel}
+
 制作一个bash文件，一键运行。新建文件：
 
 ```
@@ -80,7 +92,7 @@ make
 最后，安装opencv包
 
 ```
-sudo make install 
+sudo make install
 ```
 
 安装好后需要加动态库配置：
