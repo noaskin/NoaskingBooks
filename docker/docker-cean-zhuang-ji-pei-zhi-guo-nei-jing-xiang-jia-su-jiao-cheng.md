@@ -40,14 +40,15 @@ Docker的Linux发行版的软件仓库也从以前的[https://apt.dockerproject.
 
 * 卸载Docker安装包
 
-| yum remove docker\* |
-| :--- |
-
+```commandline
+yum remove docker\*
+```
 
  1.1.2卸载相关组件container-selinux（必须卸载，不然会报冲突的错误）
 
-| yum remove  container-selinux-1.12.5-14.el7.centos.x86\_64 |
-| :--- |
+```commandline
+yum remove  container-selinux-1.12.5-14.el7.centos.x86\_64
+```
 
 
 * 下载官方Docker YUM源
@@ -60,47 +61,49 @@ Docker的Linux发行版的软件仓库也从以前的[https://apt.dockerproject.
 
 * 安装yum-utils
 
-| sudo yum install -y yum-utils |
-| :--- |
+```commandline
+sudo yum install -y yum-utils 
+```
 
 
 1.下载docker yum源
 
-| sudo yum-config-manager \    --add-repo \     https://download.docker.com/linux/centos/docker-ce.repo |
-| :--- |
+```commandline
+sudo yum-config-manager \    --add-repo \     https://download.docker.com/linux/centos/docker-ce.repo
+```
 
 
 2.更新软件缓存
 
-| sudo yum makecache fast |
-| :--- |
+```commandline
+sudo yum makecache fast
+```
 
 
 3.获取、安装Docker CE
 
-| sudo yum -y install docker-ce |
-| :--- |
+```commandline
+sudo yum -y install docker-ce
+```
 
 
 4.启动docker并查看安装的docker版本
 
-| systemctl start docker |
-| :--- |
+```commandline
+systemctl start docker
+```
 
 
 5.查看版本信息
 
-| docker info |
-| :--- |
-
-
-  
+```commandline
+docker info
+``` 
 
 
 2.全新安装
 
 全新安装步骤不需要删除已安装的Docker和插件，直接配置官方YUM源安装即可。
-
 
 
 # 三、使用Docker
@@ -123,45 +126,43 @@ Docker的Linux发行版的软件仓库也从以前的[https://apt.dockerproject.
 
 1. 设置Docker开机启动
 
-| systemctl enable docker |
-| :--- |
+```commandline
+systemctl enable docker
+```
 
 
 1. 修改docker.service配置文件
 
-| vim /etc/systemd/system/multi-user.target.wants/docker.service |
-| :--- |
+```commandline
+vi /etc/systemd/system/multi-user.target.wants/docker.service
+```
 
+找到ExecStart=这一行，在这行最后添加加速器地址--registry-mirror=&lt;加速器地址&gt;，如：ExecStart=/usr/bin/dockerd--registry-mirror=https://jxus37ad.mirror.aliyuncs.com 
 
-找到ExecStart=这一行，在这行最后添加加速器地址--registry-mirror=&lt;加速器地址&gt;，如：ExecStart=/usr/bin/dockerd--registry-mirror=https://jxus37ad.mirror.aliyuncs.com
-
-  
 
 
 重新加载配置
 
-| sudo systemctl daemon-reload |
-| :--- |
-
+```commandline
+sudo systemctl daemon-reload
+```
 
 重新启动Docker
 
-| sudo systemctl restart docker |
-| :--- |
-
-
+```commandline
+sudo systemctl restart docker
+```
 
 
 1. 验证是否生效
 
 执行如下命令:
 
-| ps -ef  \| grep dockerd |
-| :--- |
-
+```commandline
+ps -ef  \| grep dockerd
+```
 
 如果从结果中看到了配置的--registry-mirror参数说明配置成功。
-
   
 
 
@@ -169,20 +170,17 @@ Docker的Linux发行版的软件仓库也从以前的[https://apt.dockerproject.
 
 执行如下命令启动Docker
 
-| systemctl start docker |
-| :--- |
-
+```commandline
+systemctl start docker
+```
 
 Docker运行容器前需要本地存在对应的镜像，如果镜像不存在本地，Docker会从镜像仓库下载（默认是Docker Hub公共注册服务器中的仓库）。
 
 例如从镜像仓库下载ubuntu16.04镜像
 
-| docker pull ubuntu:16.04 |
-| :--- |
-
-
-  
-
+```commandline
+docker pull ubuntu:16.04
+```
 
 * 运行容器
 
@@ -192,18 +190,12 @@ Docker运行容器前需要本地存在对应的镜像，如果镜像不存在�
 docker run -it  ubuntu:16.04  /bin/bash
 ```
 
-|  |
-| :--- |
-
 
 * 查看系统版本
 
 ```
 cat /etc/os-release
 ```
-
-|  |
-| :--- |
 
 
 
