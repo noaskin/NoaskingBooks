@@ -68,22 +68,31 @@ sudo yum install -y yum-utils
 
 1.下载docker yum源
 
+编辑.repo文件
 ```commandline
-sudo yum-config-manager \    --add-repo \     https://download.docker.com/linux/centos/docker-ce.repo
+vi /etc/yum.repos.d/docker.repo
 ```
-
+内容
+```commandline
+[dockerrepo]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/7/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+```
 
 2.更新软件缓存
 
 ```commandline
-sudo yum makecache fast
+yum update
 ```
 
 
 3.获取、安装Docker CE
 
 ```commandline
-sudo yum -y install docker-ce
+yum -y install docker-engine
 ```
 
 
@@ -139,6 +148,9 @@ vi /etc/systemd/system/multi-user.target.wants/docker.service
 
 找到ExecStart=这一行，在这行最后添加加速器地址--registry-mirror=&lt;加速器地址&gt;，如：ExecStart=/usr/bin/dockerd--registry-mirror=https://jxus37ad.mirror.aliyuncs.com 
 
+添加Spring Boot 支持：
+
+-H tcp://0.0.0.0:2375 -H unix:///var/run/docker.sock
 
 
 重新加载配置
